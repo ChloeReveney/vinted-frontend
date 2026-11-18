@@ -1,0 +1,35 @@
+/* GÉNÉRAL */
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+/* HEADER */
+header {
+  height: 120px;
+  border-bottom: 1px solid lightgray;
+}
+header .container {
+  display: flex;
+  gap: 45px;
+}
+header img {
+  height: 26px;
+}
+.search {
+  width: 630px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+/* HERO */
+.hero {
+  height: 400px;
+  border-bottom: solid 1px lightgray;
+  margin-bottom: 40px;
+}
+/* OFFER */
+.offer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
