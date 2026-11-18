@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 
 const Home = (props) => {
@@ -9,22 +10,32 @@ const Home = (props) => {
         <div className="container">
           <section className="offer">
             {data.offers.map((element, index) => {
-              const tab = element.product_details;
+              const tabDetails = element.product_details;
               return (
                 <>
-                  <article key={index}>
-                    <div>{element.owner.account.username}</div>
-                    <img src={element.product_pictures.secure_url} alt="" />
-                    <div>{element.product_price}</div>
-                    {tab.map((details, ind) => {
-                      return (
-                        <>
-                          <div>{details.TAILLE}</div>
-                          <div>{details.MARQUE}</div>
-                        </>
-                      );
-                    })}
-                  </article>
+                  <Link to="/offer/element._id">
+                    <article>
+                      <div className="user">
+                        <img
+                          src={element.owner.account.avatar.url}
+                          alt="avatar"
+                        />
+                        <span>{element.owner.account.username}</span>
+                      </div>
+                      <img src={element.product_image.url} alt="" />
+                      <div className="price">{element.product_price} €</div>
+                      {tabDetails.map((details, ind) => {
+                        return (
+                          <>
+                            <section className="brand-and-size">
+                              <div>{details.TAILLE}</div>
+                              <div>{details.MARQUE}</div>
+                            </section>
+                          </>
+                        );
+                      })}
+                    </article>
+                  </Link>
                 </>
               );
             })}

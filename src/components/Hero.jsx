@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
     <>
-      <section className="hero">Je suis le Hero</section>
+      <section className="hero">Je suis le Hero de ce projet</section>
     </>
   );
 };

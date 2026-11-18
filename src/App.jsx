@@ -31,7 +31,7 @@ function App() {
             <Header />
             <Routes>
               <Route path="/" element={<Home data={data} />} />
-              <Route path="/offer/:id" element={<Offer />} />
+              <Route path="/offer/:id" element={<Offer data={data} />} />
             </Routes>
           </Router>
         </>

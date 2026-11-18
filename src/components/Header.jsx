@@ -17,6 +17,13 @@ const Header = () => {
             className="search"
           />
         </div>
+        <section className="buttons">
+          <div className="login">
+            <button>S'inscrire</button>
+            <button>Se connecter</button>
+          </div>
+          <button>Vends tes articles</button>
+        </section>
       </div>
     </header>
   );
