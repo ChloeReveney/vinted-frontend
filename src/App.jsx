@@ -5,6 +5,8 @@ import "./App.css";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import Offer from "./pages/Offer";
+import Register from "./pages/Register";
+// import Login from "./pages/Login";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -32,6 +34,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home data={data} />} />
               <Route path="/offer/:id" element={<Offer />} />
+              {/* <Route path="/login" element={<Login />} /> */}
+              <Route path="/signup" element={<Register />} />
             </Routes>
           </Router>
         </>

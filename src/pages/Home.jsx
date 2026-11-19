@@ -27,14 +27,13 @@ const Home = (props) => {
                         alt="image du vêtement"
                       />
                       <div className="price">{element.product_price} €</div>
-                      {tabDetails.map((details) => {
-                        return (
-                          <>
-                            <section className="brand-and-size">
-                              <p>{details.TAILLE}</p>
-                              <p>{details.MARQUE}</p>
-                            </section>
-                          </>
+                      {tabDetails.map((detail) => {
+                        return detail.TAILLE ? (
+                          <p className="size">{detail.TAILLE}</p>
+                        ) : (
+                          detail.MARQUE && (
+                            <p className="brand">{detail.MARQUE}</p>
+                          )
                         );
                       })}
                     </Link>

@@ -21,7 +21,7 @@ const Offer = () => {
 
   return (
     <>
-      <main>
+      <main className="offer">
         <div className="container">
           {isLoading ? (
             <p>Chargement en cours...</p>
@@ -32,9 +32,38 @@ const Offer = () => {
                 alt="photo du vêtement"
               />
               <aside>
-                <p>{data.product_price}</p>
+                <p>{data.product_price} €</p>
                 {data.product_details.map((details) => {
-                  return <div></div>;
+                  return (
+                    <div className="product-details">
+                      {details.MARQUE && (
+                        <p>
+                          <span>MARQUE</span> {details.MARQUE}
+                        </p>
+                      )}
+                      {details.TAILLE && (
+                        <p>
+                          <span>TAILLE</span> {details.TAILLE}
+                        </p>
+                      )}
+                      {details.ÉTAT && (
+                        <p>
+                          <span>ÉTAT</span> {details.ÉTAT}
+                        </p>
+                      )}
+                      {details.COULEUR && (
+                        <p>
+                          <span>COULEUR</span> {details.COULEUR}
+                        </p>
+                      )}
+                      {details.EMPLACEMENT && (
+                        <p>
+                          <span>EMPLACEMENT</span> {details.EMPLACEMENT}
+                        </p>
+                      )}
+                      {/* {details.MODES DE PAIEMENT && <span>MODES DE PAIEMENT {details.MODES DE PAIEMENT}</span>} */}
+                    </div>
+                  );
                 })}
                 <div>
                   <h1>{data.product_name}</h1>
