@@ -6,6 +6,7 @@ const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [token, setToken] = useState("");
   const navigate = useNavigate();
 
   return (
@@ -13,17 +14,24 @@ const Register = () => {
       <h1>S'inscrire</h1>
       <form
         onSubmit={async (event) => {
-          event.preventDefault();
-          const response = await axios.post(
-            "https://lereacteur-vinted-api.herokuapp.com/user/signup",
-            {
-              username: name,
-              email: email,
-              password: password,
-              newsletter: true,
-            },
-          );
-          console.log(response);
+          try {
+            event.preventDefault();
+            const response = await axios.post(
+              "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+              {
+                email: email,
+                username: name,
+                password: password,
+                newsletter: true,
+              },
+            );
+            Cookies.set("token", response.data.token);
+            setToken(response.data.token);
+            navigate("/");
+            console.log(response.data);
+          } catch (error) {
+            alert(error.response);
+          }
         }}
       >
         <div>
