@@ -1,6 +1,7 @@
 import logo from "../assets/Vinted_logo.png";
 import { Link } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
+import { useState } from "react";
 
 const Header = () => {
   return (
@@ -18,14 +19,18 @@ const Header = () => {
           />
         </div>
         <section className="buttons">
-          <div className="login">
-            <Link to="/signup">
-              <button>S'inscrire</button>
-            </Link>
-            <Link to="/login">
-              <button>Se connecter</button>
-            </Link>
-          </div>
+          {isConnected ? (
+            <button className="red">Se déconnecter</button>
+          ) : (
+            <div className="header-login">
+              <Link to="/signup">
+                <button>S'inscrire</button>
+              </Link>
+              <Link to="/login">
+                <button>Se connecter</button>
+              </Link>
+            </div>
+          )}
           <button>Vends tes articles</button>
         </section>
       </div>

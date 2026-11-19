@@ -1,12 +1,16 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [token, setToken] = useState("");
+  const [isConnected, setIsConnected] = useState(
+    Cookies.get("token") ? true : false,
+  );
   const navigate = useNavigate();
 
   return (
