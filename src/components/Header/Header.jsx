@@ -1,9 +1,10 @@
-import logo from "../assets/Vinted_logo.png";
+import logo from "../../assets/Vinted_logo.png";
+import "./index.css";
 import { Link } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
-import { useState } from "react";
+import Cookies from "js-cookie";
 
-const Header = () => {
+const Header = ({ token, setToken }) => {
   return (
     <header>
       <div className="container">
@@ -19,8 +20,16 @@ const Header = () => {
           />
         </div>
         <section className="buttons">
-          {isConnected ? (
-            <button className="red">Se déconnecter</button>
+          {token ? (
+            <button
+              onClick={() => {
+                Cookies.remove("token");
+                setToken(null);
+              }}
+              className="red"
+            >
+              Se déconnecter
+            </button>
           ) : (
             <div className="header-login">
               <Link to="/signup">
@@ -31,7 +40,9 @@ const Header = () => {
               </Link>
             </div>
           )}
-          <button>Vends tes articles</button>
+          <Link to="/login">
+            <button className="sale">Vends tes articles</button>
+          </Link>
         </section>
       </div>
     </header>

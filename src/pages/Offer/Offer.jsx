@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import "./index.css";
 
 const Offer = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -33,39 +34,41 @@ const Offer = () => {
               />
               <aside>
                 <p>{data.product_price} €</p>
-                {data.product_details.map((details) => {
-                  return (
-                    <div className="product-details">
-                      {details.MARQUE && (
-                        <p>
-                          <span>MARQUE</span> {details.MARQUE}
-                        </p>
-                      )}
-                      {details.TAILLE && (
-                        <p>
-                          <span>TAILLE</span> {details.TAILLE}
-                        </p>
-                      )}
-                      {details.ÉTAT && (
-                        <p>
-                          <span>ÉTAT</span> {details.ÉTAT}
-                        </p>
-                      )}
-                      {details.COULEUR && (
-                        <p>
-                          <span>COULEUR</span> {details.COULEUR}
-                        </p>
-                      )}
-                      {details.EMPLACEMENT && (
-                        <p>
-                          <span>EMPLACEMENT</span> {details.EMPLACEMENT}
-                        </p>
-                      )}
-                      {/* {details.MODES DE PAIEMENT && <span>MODES DE PAIEMENT {details.MODES DE PAIEMENT}</span>} */}
-                    </div>
-                  );
-                })}
-                <div>
+                <div className="product-details">
+                  {data.product_details.map((details) => {
+                    return (
+                      <>
+                        {details.MARQUE && (
+                          <p>
+                            <span>MARQUE</span> {details.MARQUE}
+                          </p>
+                        )}
+                        {details.TAILLE && (
+                          <p>
+                            <span>TAILLE</span> {details.TAILLE}
+                          </p>
+                        )}
+                        {details.ÉTAT && (
+                          <p>
+                            <span>ÉTAT</span> {details.ÉTAT}
+                          </p>
+                        )}
+                        {details.COULEUR && (
+                          <p>
+                            <span>COULEUR</span> {details.COULEUR}
+                          </p>
+                        )}
+                        {details.EMPLACEMENT && (
+                          <p>
+                            <span>EMPLACEMENT</span> {details.EMPLACEMENT}
+                          </p>
+                        )}
+                        {/* {details.MODES DE PAIEMENT && <span>MODES DE PAIEMENT {details.MODES DE PAIEMENT}</span>} */}
+                      </>
+                    );
+                  })}
+                </div>
+                <div className="product-description">
                   <h1>{data.product_name}</h1>
                   <p>{data.product_description}</p>
                 </div>

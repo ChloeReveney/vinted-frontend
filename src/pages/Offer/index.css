@@ -1,0 +1,58 @@
+.offer {
+  background-color: #ebedee;
+}
+.offer img {
+  height: 600px;
+}
+.offer-user img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.offer-user {
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+.offer > div {
+  display: flex;
+  gap: 230px;
+  padding-top: 30px;
+  padding-left: 130px;
+}
+aside {
+  background-color: #ffffff;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  /* align-items: center; */
+}
+aside > p {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+aside > div p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+div > h1 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.product-details span {
+  color: #cfcfcf;
+}
+.product-details p {
+  color: #6c6c6c;
+}
+.product-details {
+  border-bottom: lightgrey solid 1px;
+  margin-bottom: 35px;
+}
+div > p {
+  font-size: 16px;
+  color: #6b6b6b;
+}
