@@ -8,6 +8,7 @@ import Offer from "./pages/Offer/Offer";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import Cookies from "js-cookie";
+import Publish from "./pages/Publish/Publish";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -34,7 +35,7 @@ function App() {
           <Router>
             <Header token={token} setToken={setToken} />
             <Routes>
-              <Route path="/" element={<Home data={data} />} />
+              <Route path="/" element={<Home data={data} token={token} />} />
               <Route path="/offer/:id" element={<Offer />} />
               <Route
                 path="/login"
@@ -44,6 +45,7 @@ function App() {
                 path="/signup"
                 element={<Register token={token} setToken={setToken} />}
               />
+              <Route path="/publish" element={<Publish token={token} />} />
             </Routes>
           </Router>
         </>

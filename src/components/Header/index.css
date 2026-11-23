@@ -10,13 +10,23 @@ header img {
   height: 30px;
 }
 .search {
-  width: 630px;
+  position: relative;
+}
+.search-input {
+  width: 595px;
   height: 40px;
   border-radius: 5px;
   font-size: 12px;
-  padding-left: 20px;
+  padding-left: 35px;
   background-color: #f5f6f7;
-  color: #dcddde;
+  color: #cecfcf;
+}
+.logo-glass {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 20px;
+  color: #bbbbbb;
 }
 .buttons {
   display: flex;

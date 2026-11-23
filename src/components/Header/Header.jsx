@@ -11,12 +11,12 @@ const Header = ({ token, setToken }) => {
         <Link to="/">
           <img src={logo} alt="logo Vinted" />
         </Link>
-        <div>
-          <FiSearch />
+        <div className="search">
+          <FiSearch className="logo-glass" />
           <input
             type="text"
             placeholder="Recherche des articles"
-            className="search"
+            className="search-input"
           />
         </div>
         <section className="buttons">
@@ -40,9 +40,15 @@ const Header = ({ token, setToken }) => {
               </Link>
             </div>
           )}
-          <Link to="/login">
-            <button className="sale">Vends tes articles</button>
-          </Link>
+          {token ? (
+            <Link to="/publish">
+              <button className="sale">Vends tes articles</button>
+            </Link>
+          ) : (
+            <Link to="/login">
+              <button className="sale">Vends tes articles</button>
+            </Link>
+          )}
         </section>
       </div>
     </header>

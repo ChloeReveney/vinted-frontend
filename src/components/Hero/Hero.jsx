@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./index.css";
 import hero from "../../assets/hero-24963eb2.jpg";
 
-const Hero = () => {
+const Hero = ({ token }) => {
   return (
     <>
       <section className="hero">
@@ -10,9 +10,15 @@ const Hero = () => {
         <div className="container">
           <section className="sort">
             <h1>Prêts à faire du tri dans vos placards ?</h1>
-            <Link to="/login">
-              <button>Commencer à vendre</button>
-            </Link>
+            {token ? (
+              <Link to="/publish">
+                <button>Commencer à vendre</button>
+              </Link>
+            ) : (
+              <Link to="/login">
+                <button>Commencer à vendre</button>
+              </Link>
+            )}
           </section>
         </div>
       </section>

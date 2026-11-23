@@ -1,0 +1,94 @@
+.publish {
+  background-color: #ebedee;
+}
+.publish h1 {
+  font-size: 24px;
+  padding-top: 45px;
+  font-weight: 200;
+}
+.picture-section {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.picture-section > div {
+  width: 1230px;
+  height: 200px;
+  border: dashed 1px #ebedee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.picture {
+  width: 200px;
+  height: 45px;
+  gap: 20px;
+  border: 1px solid #0bb1ba;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0bb1ba;
+}
+.input-file {
+  display: none;
+}
+.publish form > section {
+  width: 100%;
+  background-color: #ffffff;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.publish form label {
+  font-size: 16px;
+}
+.title,
+.description,
+.brand,
+.size,
+.color,
+.condition,
+.city,
+.price {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+}
+.publish > form div > input {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: solid 1px #ebedee;
+  font-size: 14px;
+  color: #d7d8da;
+}
+
+.title,
+.brand,
+.size,
+.color,
+.condition,
+.city {
+  border-bottom: solid 1px #ebedee;
+  color: #000000;
+}
+.description {
+  margin-bottom: 80px;
+}
+.exchange {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+.publish button {
+  font-size: 16px;
+  width: 75px;
+  height: 45px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  margin-top: 70px;
+  background-color: #0bb1ba;
+  color: #f5fcfc;
+}
