@@ -1,0 +1,28 @@
+.payment {
+  background-color: #ebedee;
+}
+.payment .container {
+  display: flex;
+  justify-content: center;
+}
+.payment section {
+  width: 550px;
+  background-color: #ffffff;
+  margin-top: 35px;
+  padding: 25px;
+}
+.payment h2 {
+  font-size: 14px;
+  color: #999999;
+  margin-bottom: 50px;
+}
+.order > div {
+  border-bottom: solid 1px #ebedee;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #666666;
+}
+.main-price {
+  display: flex;
+  justify-content: space-between;
+}

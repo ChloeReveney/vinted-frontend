@@ -5,6 +5,7 @@ import {
 } from "@stripe/react-stripe-js";
 import { useState } from "react";
 import axios from "axios";
+import "../pages/Payment/payment.css";
 
 const CheckoutForm = () => {
   const stripe = useStripe();
@@ -21,7 +22,6 @@ const CheckoutForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     if (!stripe) {
       return;
     }
@@ -54,17 +54,17 @@ const CheckoutForm = () => {
     } else {
       setSuccess(true);
     }
-
-    return success ? (
-      <p>Paiement effectué</p>
-    ) : (
-      <form onSubmit={handleSubmit}>
-        <PaymentElement />
-        <button disabled={!stripe || !elements || isLoading}>Pay</button>
-        {errorMessage && <p className="red">{errorMessage}</p>}
-      </form>
-    );
   };
+
+  return success ? (
+    <p>Paiement effectué</p>
+  ) : (
+    <form onSubmit={handleSubmit}>
+      <PaymentElement className="elements" />
+      <button disabled={!stripe || isLoading}>Pay</button>
+      {errorMessage && <p className="red">{errorMessage}</p>}
+    </form>
+  );
 };
 
 export default CheckoutForm;
