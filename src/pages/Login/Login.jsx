@@ -1,14 +1,15 @@
 import { useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import Cookies from "js-cookie";
 import "./index.css";
 
 const Login = ({ token, setToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <main className="login">
@@ -28,7 +29,11 @@ const Login = ({ token, setToken }) => {
               if (response.data.token) {
                 Cookies.get("token", response.data.token);
                 setToken(response.data.token);
-                navigate("/publish");
+                if (location.state) {
+                  navigate(location.state.from);
+                } else {
+                  navigate("/");
+                }
               }
             } catch (error) {
               error.response

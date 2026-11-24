@@ -9,6 +9,7 @@ import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import Cookies from "js-cookie";
 import Publish from "./pages/Publish/Publish";
+import Payment from "./pages/Payment/Payment";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -46,6 +47,7 @@ function App() {
                 element={<Register token={token} setToken={setToken} />}
               />
               <Route path="/publish" element={<Publish token={token} />} />
+              <Route path="/payment" element={<Payment token={token} />} />
             </Routes>
           </Router>
         </>

@@ -6,6 +6,11 @@
   padding-top: 45px;
   font-weight: 200;
 }
+.publish form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 .picture-section {
   height: 250px;
   display: flex;
@@ -43,34 +48,34 @@
 }
 .publish form label {
   font-size: 16px;
+  /* width: 50%; */
 }
-.title,
-.description,
-.brand,
-.size,
-.color,
-.condition,
-.city,
-.price {
+.publish .title,
+.publish .brand,
+.publish .description,
+.publish .size,
+.publish .color,
+.publish .condition,
+.publish .city,
+.publish .price {
   display: flex;
   justify-content: space-between;
   padding: 25px;
 }
-.publish > form div > input {
-  border-left: none;
-  border-right: none;
-  border-top: none;
+.publish form div > input:not([type="file"]) {
+  border: none;
   border-bottom: solid 1px #ebedee;
+  width: 50%;
   font-size: 14px;
   color: #d7d8da;
 }
 
-.title,
-.brand,
-.size,
-.color,
-.condition,
-.city {
+.publish .title,
+.publish .brand,
+.publish .size,
+.publish .color,
+.publish .condition,
+.publish .city {
   border-bottom: solid 1px #ebedee;
   color: #000000;
 }
@@ -80,7 +85,11 @@
 .exchange {
   display: flex;
   justify-content: flex-end;
-  gap: 15px;
+  padding: 25px;
+}
+.exchange input {
+  height: 22px;
+  width: 22px;
 }
 .publish button {
   font-size: 16px;

@@ -3,6 +3,7 @@
 }
 .offer img {
   height: 600px;
+  margin-bottom: 50px;
 }
 .offer-user img {
   height: 50px;
@@ -27,7 +28,7 @@ aside {
   justify-content: center;
   padding-left: 20px;
   padding-right: 20px;
-  /* align-items: center; */
+  margin-bottom: 50px;
 }
 aside > p {
   font-size: 24px;
@@ -55,4 +56,19 @@ div > h1 {
 div > p {
   font-size: 16px;
   color: #6b6b6b;
+}
+.offer aside button {
+  width: 320px;
+  height: 35px;
+  background-color: #0bb1ba;
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.offer-user {
+  display: flex;
+  gap: 10px;
+  line-height: 45px;
+  font-size: 16px;
+  color: #000000;
 }

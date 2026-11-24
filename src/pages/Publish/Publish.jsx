@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import "./publish.css";
 import { FaPlus } from "react-icons/fa";
+import { Navigate } from "react-router-dom";
 
 const Publish = ({ token }) => {
   const [picture, setPicture] = useState(null);
@@ -15,7 +16,7 @@ const Publish = ({ token }) => {
   const [price, setPrice] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  return (
+  return token ? (
     <>
       <main className="publish">
         <div className="container">
@@ -43,7 +44,7 @@ const Publish = ({ token }) => {
                     },
                   },
                 );
-                navigate("/offer/:id");
+                Navigate(`/offer/${response.data._id}`);
               } catch (error) {
                 error.response
                   ? setErrorMessage(error.response.data.message)
@@ -183,6 +184,8 @@ const Publish = ({ token }) => {
         </div>
       </main>
     </>
+  ) : (
+    <Navigate to="/login" />
   );
 };
 
